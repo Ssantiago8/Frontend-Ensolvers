@@ -13,7 +13,7 @@ const Modal = ({ mode, setShowModal, notes }) => {
 
   const postnotes = async () => {
     try {
-      const response = await fetch("http://localhost:8000/notes", {
+      const response = await fetch("https://noteapp-dpqr.onrender.com/notes", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -28,13 +28,16 @@ const Modal = ({ mode, setShowModal, notes }) => {
 
   const editnotes = async () => {
     try {
-      const response = await fetch(`http://localhost:8000/notes/${notes.id}`, {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ text: data.text || "" }),
-      });
+      const response = await fetch(
+        `https://noteapp-dpqr.onrender.com/notes/${notes.id}`,
+        {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ text: data.text || "" }),
+        }
+      );
       console.log(response);
     } catch (error) {
       console.log(error);

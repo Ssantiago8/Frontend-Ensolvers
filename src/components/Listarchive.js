@@ -8,7 +8,7 @@ const Listarchive = ({ notes, getArchived }) => {
     e.preventDefault();
     try {
       const response = await fetch(
-        `http://localhost:8000/notes/${notes.id}/unarchive`,
+        `https://noteapp-dpqr.onrender.com/notes/${notes.id}/unarchive`,
         {
           method: "PATCH",
           headers: {

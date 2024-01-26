@@ -9,7 +9,7 @@ const App = () => {
 
   const getData = async () => {
     try {
-      const response = await fetch("http://localhost:8000/notes", {
+      const response = await fetch("https://noteapp-dpqr.onrender.com/notes", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -24,12 +24,15 @@ const App = () => {
 
   const getArchived = async () => {
     try {
-      const response = await fetch("http://localhost:8000/notes/archived", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await fetch(
+        "https://noteapp-dpqr.onrender.com/notes/archived",
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
       const json = await response.json();
       setArchived(json);
     } catch (error) {
